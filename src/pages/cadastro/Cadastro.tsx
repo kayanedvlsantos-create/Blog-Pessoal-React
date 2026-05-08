@@ -1,4 +1,4 @@
-import { use, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
@@ -69,7 +69,7 @@ export function Cadastro() {
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
             place-items-center font-bold">
                 <div
-                    className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
+                    className="bg-[url('https://lafeber.com/mammals/wp-content/uploads/rat-type-laptop-bs-20240826-300x300.jpg')] lg:block hidden bg-no-repeat 
                     w-full min-h-screen bg-cover bg-center"
                 ></div>
                 <form className='flex justify-center items-center flex-col w-2/3 gap-3'

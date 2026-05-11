@@ -38,35 +38,35 @@ function Login() {
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" 
                     onSubmit={login}>
 
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+                    <h2 className="text-[#48474C] text-5xl ">Login</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuário</label>
+                        <label className="text-pink-400" htmlFor="usuario">E-mail</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
                             placeholder="usuario@email.com"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                    <div className="flex flex-col w-full">
-                    <label htmlFor="senha">Senha</label>
+                    <label className="text-pink-400" htmlFor="senha">Senha</label>
                     <input
                         type="password"
                         id="senha"
                         name="senha"
-                        placeholder="Senha"
-                        className="border-2 border-slate-700 rounded p-2"
+                        placeholder="********"
+                        className="border-2 border-amber-200 rounded p-2"
                         value={usuarioLogin.senha}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                     </div> 
                     <button
                         type="submit"
-                        className="rounded bg-yellow-200 flex justify-center
-                        hover:bg-pink-400 text-pink-600 w-1/2 py-2">
+                        className="rounded bg-pink-400 flex justify-center
+                        hover:bg-pink-500 text-white w-1/2 py-2">
                             {isLoading ?
                             <ClipLoader
                         color="ffffff"
@@ -78,9 +78,9 @@ function Login() {
 
                         <hr className="border-slate-800 w-full" />
 
-                        <p>
+                        <p className="text-[#48474C]">
                             Ainda não tem uma conta?{' '}
-                            <Link to="/cadastro" className="text-indigo-800 hover:underline">
+                            <Link to="/cadastro" className="text-pink-400 hover:underline">
                             Cadastre-se
                             </Link>
                         </p>

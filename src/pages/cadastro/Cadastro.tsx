@@ -75,63 +75,63 @@ export function Cadastro() {
                 <form className='flex justify-center items-center flex-col w-2/3 gap-3'
                     onSubmit={cadastrarNovoUsuario}>
 
-                    <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+                    <h2 className='text-[#48474C] text-5xl'>Cadastrar</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="nome">Nome</label>
+                        <label className="text-pink-400" htmlFor="nome">Nome</label>
                         <input
                             type="text"
                             id="nome"
                             name="nome"
                             placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuario</label>
+                        <label className="text-pink-400" htmlFor="usuario">E-mail</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
-                            placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="usuario@email.com"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="foto">Foto</label>
+                        <label className="text-pink-400" htmlFor="foto">Foto</label>
                         <input
                             type="text"
                             id="foto"
                             name="foto"
                             placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
+                        <label className="text-pink-400" htmlFor="senha">Senha</label>
                         <input
                             type="password"
                             id="senha"
                             name="senha"
-                            placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="********"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
+                        <label className="text-pink-400" htmlFor="confirmarSenha">Confirmar Senha</label>
                         <input
                             type="password"
                             id="confirmarSenha"
                             name="confirmarSenha"
-                            placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="********"
+                            className="border-2 border-amber-200 rounded p-2"
                             value={confirmarSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handlerConfirmarSenha(e)}
                         />
@@ -146,8 +146,8 @@ export function Cadastro() {
                         </button>
                         <button
                             type='submit'
-                            className='rounded text-white bg-indigo-400 
-                           hover:bg-indigo-900 w-1/2 py-2
+                            className='rounded text-white bg-pink-400 
+                           hover:bg-pink-500 w-1/2 py-2
                            flex justify-center'
                         >
                             {isLoading ?

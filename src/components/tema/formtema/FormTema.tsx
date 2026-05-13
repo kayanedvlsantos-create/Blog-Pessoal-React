@@ -78,7 +78,7 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                alert('O Tema foi cadastrado com sucesso!')
+                alert('Squeak! O Tema foi cadastrado com sucesso!')
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()

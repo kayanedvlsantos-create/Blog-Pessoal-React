@@ -53,7 +53,7 @@ function ListaPostagens() {
             {isLoading && (
                 <div className="flex justify-center w-full my-8">
                     <SyncLoader
-                        color="#312e81"
+                        color="#48474C"
                         size={32}
                     />
                 </div>

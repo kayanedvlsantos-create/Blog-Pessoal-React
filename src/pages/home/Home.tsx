@@ -8,7 +8,7 @@ function Home() {
     <div className="container grid grid-cols-2 text-pink-400">
      <div className="flex flex-col gap-4 items-center justify-center py-4">
       <h2 className="text-5xl font-bold">
-        ratomanchado Blogue
+        ratomanchado blogue
       </h2>
       <p className='text-xl'>
         Squeak! O que te traz aqui hoje?

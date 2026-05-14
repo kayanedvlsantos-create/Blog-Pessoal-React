@@ -27,14 +27,14 @@ function DeletarPostagem() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta('Você precisa estar logado', 'info')
             navigate('/')
         }
     }, [token])
@@ -55,14 +55,14 @@ function DeletarPostagem() {
                 }
             })
 
-            alert('Postagem apagada com sucesso')
+            ToastAlerta('Postagem apagada com sucesso', 'sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }else {
-                alert('Ocorreu um erro ao tentar deletar a postagem.')
+                ToastAlerta('Ocorreu um erro ao tentar deletar a postagem.', 'erro')
             }
         }
 

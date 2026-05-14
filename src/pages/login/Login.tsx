@@ -76,7 +76,7 @@ function Login() {
 }
                         </button>
 
-                        <hr className="border-slate-800 w-full" />
+                        <hr className="border-amber-200 w-full" />
 
                         <p className="text-[#48474C]">
                             Ainda não tem uma conta?{' '}

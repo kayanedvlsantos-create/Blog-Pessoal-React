@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import type Postagem from "../../../models/Postagem";
 import type Tema from "../../../models/Tema";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormPostagem() {
 
@@ -31,7 +32,7 @@ function FormPostagem() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }
         }
     }
@@ -44,7 +45,7 @@ function FormPostagem() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }
         }
     }
@@ -57,14 +58,14 @@ function FormPostagem() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta('Você precisa estar logado', 'info')
             navigate('/');
         }
     }, [token])
@@ -109,13 +110,13 @@ function FormPostagem() {
                     },
                 });
 
-                alert('Squeak! Postagem atualizada com sucesso')
+                ToastAlerta('Squeak! Postagem atualizada com sucesso', 'sucesso')
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar a Postagem')
+                    ToastAlerta('Erro ao atualizar a Postagem', 'erro')
                 }
             }
 
@@ -127,13 +128,13 @@ function FormPostagem() {
                     },
                 })
 
-                alert('Postagem cadastrada com sucesso');
+                ToastAlerta('Postagem cadastrada com sucesso', 'sucesso');
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao cadastrar a Postagem');
+                    ToastAlerta('Erro ao cadastrar a Postagem', 'erro')
                 }
             }
         }
@@ -197,7 +198,7 @@ function FormPostagem() {
                 </div>
                 <button 
                     type='submit' 
-                    className='rounded disabled:bg-slate-200 bg-[#48474C] hover:bg-pink-300
+                    className='rounded bg-[#48474C] hover:bg-pink-300
                                text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
                                disabled={carregandoTema}
                 >

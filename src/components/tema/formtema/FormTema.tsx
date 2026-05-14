@@ -4,6 +4,7 @@ import { ClipLoader } from "react-spinners";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
 import type Tema from "../../../models/Tema";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
 
@@ -26,14 +27,14 @@ function FormTema() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                alert("Sua sessão expirou, faça login novamente.")
+                ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert("Você precisa estar logado.")
+            ToastAlerta("Você precisa estar logado.", "info")
             navigate('/')
         }
     }, [token])
@@ -64,13 +65,13 @@ function FormTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                     })
-                    alert('O Tema foi atualizado com sucesso!')
+                    ToastAlerta('O Tema foi atualizado com sucesso!', 'sucesso')
                 } catch (error: any) {
                     if (error.toString().includes('401')) {
                         handleLogout()
-                        alert("Sua sessão expirou, faça login novamente.")
+                        ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
                     } else {
-                        alert("Ocorreu um erro ao atualizar o tema.")
+                        ToastAlerta("Ocorreu um erro ao atualizar o tema.", "erro")
                     }
             }
         } else {
@@ -78,13 +79,13 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                alert('Squeak! O Tema foi cadastrado com sucesso!')
+                ToastAlerta('Squeak! O Tema foi cadastrado com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
-                    alert("Sua sessão expirou, faça login novamente.")
+                    ToastAlerta("Sua sessão expirou, faça login novamente.", "info")
                 } else {
-                    alert("Ocorreu um erro ao cadastrar o tema.")
+                    ToastAlerta("Ocorreu um erro ao cadastrar o tema.", "erro")
                 }
             }
         }

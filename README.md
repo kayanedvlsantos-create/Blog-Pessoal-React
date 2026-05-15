@@ -1,74 +1,87 @@
-# React + TypeScript + Vite
+# 📝 Blog Pessoal — React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação fullstack de blog pessoal desenvolvida com React, TypeScript e Vite, com deploy na Vercel e integração a uma API REST.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Deploy
 
-## React Compiler
+🔗 **[blog-pessoal-react-fawn-beta.vercel.app](https://blog-pessoal-react-fawn-beta.vercel.app)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/) — biblioteca de UI
+- [TypeScript](https://www.typescriptlang.org/) — tipagem estática
+- [Vite](https://vitejs.dev/) — bundler e servidor de desenvolvimento
+- [React Router DOM](https://reactrouter.com/) — roteamento
+- [Axios](https://axios-http.com/) — requisições HTTP
+- [Tailwind CSS](https://tailwindcss.com/) — estilização
+- [Vercel](https://vercel.com/) — deploy e hospedagem
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ✅ Cadastro e login de usuários
+- ✅ Autenticação com token JWT
+- ✅ Criação, edição e exclusão de postagens
+- ✅ Criação, edição e exclusão de temas
+- ✅ Listagem de postagens por tema
+- ✅ Perfil do usuário
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── components/
+│   ├── postagem/         # Componentes de postagens
+│   ├── tema/             # Componentes de temas
+│   ├── usuario/          # Cadastro e perfil
+│   └── shared/           # Componentes reutilizáveis (navbar, footer, toast...)
+├── contexts/             # Context API (autenticação)
+├── models/               # Interfaces TypeScript
+├── pages/                # Páginas da aplicação
+└── services/             # Configuração do Axios
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Como rodar localmente
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone o repositório
+git clone https://github.com/kayanedvlsantos-create/Blog-Pessoal-React.git
+
+# Acesse a pasta
+cd Blog-Pessoal-React
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
-# Blog-Pessoal-React-
+
+A aplicação estará disponível em `http://localhost:5173`
+
+---
+
+## 🔑 Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto com a URL da sua API:
+
+```env
+VITE_API_URL=https://sua-api.onrender.com
+```
+
+---
+
+## 👩‍💻 Autora
+
+Feito com 💙 por **Kayane Santos**
+
+[![GitHub](https://img.shields.io/badge/GitHub-kayanedvlsantos--create-181717?style=flat&logo=github)](https://github.com/kayanedvlsantos-create)
